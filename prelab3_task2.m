@@ -1,3 +1,8 @@
+%% ENGS 22; Lab 3 - Prelab
+% Sep 17th, 2024
+% Bob B Moriasi
+
+%% Euler's method
 function euler_method()
     % Initial Values
     x0 = 0; 
@@ -16,18 +21,26 @@ function euler_method()
     end
 
     % Plotting the result
+    hold on 
+
     plot(time_values, y_values, '-o');
     xlabel('Time (seconds)');
-    ylabel('y value');
-    title('Euler Method: Value of y over time');
+    ylabel('x(t)');
+    title('Euler Method: Value of y over time vs Analytical Solution');
+
+    % Plotting the analytical solution
+    analytical = 5 - 4 * exp(-0.1 * time_values);
+    plot(time_values, analytical)
+
+    hold off
 end
 
-% Function for the given differential equation
+%% Function for the given differential equation
 function result = func(x, y)
     result = -0.1 * y + 0.5;
 end
 
-% Function implementing Euler's Method for one step
+%% Function implementing Euler's Method for one step
 function y_next = euler(x, y, h)
     % Calculate the next y value using Euler's method
     y_next = y + h * func(x, y);

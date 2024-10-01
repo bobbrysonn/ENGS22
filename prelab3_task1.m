@@ -1,11 +1,10 @@
-%% Prelab 3
+%% ENGS 22; Lab 3 - Prelab
+% Sep 17th, 2024
+% Bob B Moriasi
 
+%% This function will calculate the resistance of two resistors in parallel
 function Rp = rpar(R1, R2)
-% This function will calculate the resistance of two resistors in parallel
-% Bob Moriasi, ENGS 22, Sep 30th, 2024
-
 Rp = R1.*R2./(R1 + R2);
-
 end
 
 %% Demonstration
